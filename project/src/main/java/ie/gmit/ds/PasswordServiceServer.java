@@ -9,10 +9,12 @@ import java.util.logging.Logger;
 
 public class PasswordServiceServer {
 
+    /** VARIABLES */
     private Server grpcServer;
     private static final Logger logger = Logger.getLogger(PasswordServiceServer.class.getName());
     private static final int PORT = 50551;
 
+    /** SERVER STARTUP METHOD */
     private void start() throws IOException {
         grpcServer = ServerBuilder.forPort(PORT)
                 .addService(new PasswordServiceImpl())
@@ -22,6 +24,7 @@ public class PasswordServiceServer {
 
     }
 
+    /** SERVER SHUTDOWN METHOD */
     private void stop() {
         if (grpcServer != null) {
             grpcServer.shutdown();
@@ -35,5 +38,12 @@ public class PasswordServiceServer {
         if (grpcServer != null) {
             grpcServer.awaitTermination();
         }
+    }
+
+    /** MAIN METHOD */
+    public static void main(String[] args) throws IOException, InterruptedException {
+        final PasswordServiceServer passwordServiceServer = new PasswordServiceServer();
+        passwordServiceServer.start();
+        passwordServiceServer.blockUntilShutdown();
     }
 }

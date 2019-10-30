@@ -1,3 +1,5 @@
+package ie.gmit.ds;
+
 /**  Adapted from https://gist.github.com/john-french/9c94d88f34b2a4ccbe55af6afb083674 */
 
 import javax.crypto.SecretKeyFactory;

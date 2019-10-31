@@ -56,6 +56,7 @@
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.5.1</version>
                 <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
                     <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}
                     </protocArtifact>
                     <pluginId>grpc-java</pluginId>
@@ -71,6 +72,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- USED FOR BUILDING JAR FILE -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>

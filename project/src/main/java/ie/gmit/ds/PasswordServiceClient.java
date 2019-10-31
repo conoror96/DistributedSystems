@@ -127,6 +127,7 @@ public class PasswordServiceClient {
             client.hashRequest();
             client.validationRequest();
 
+            System.out.println("User ID: " + client.userId);
             System.out.println("Password: " + client.password);
             System.out.println("Hashed Password: " + client.hashedPassword.toByteArray().toString());
             System.out.println("Salt: " + client.salt.toByteArray().toString());

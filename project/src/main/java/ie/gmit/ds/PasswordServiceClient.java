@@ -94,7 +94,7 @@ public class PasswordServiceClient {
 
             @Override
             public void onNext(BoolValue value) {
-
+            System.out.println("Validation Successful! ");
             }
 
             @Override
@@ -126,6 +126,10 @@ public class PasswordServiceClient {
         try {
             client.hashRequest();
             client.validationRequest();
+
+            System.out.println("Password: " + client.password);
+            System.out.println("Hashed Password: " + client.hashedPassword.toByteArray().toString());
+            System.out.println("Salt: " + client.salt.toByteArray().toString());
         } finally {
             // Don't stop process, keep alive to receive async response
             Thread.currentThread().join();

@@ -51,4 +51,26 @@ public class PasswordServiceClient {
         password = userInput.next();
     }
 
+    /** METHOD FOR HASH REQUEST */
+    public void hashRequest(){
+
+    }
+
+    /** METHOD FOR VALIDATION REQUEST */
+    public void validationRequest(){
+
+    }
+
+    /** MAIN METHOD */
+    public static void main(String[] args) throws Exception {
+        PasswordServiceClient client = new PasswordServiceClient("localhost", 50551);
+        try {
+            client.hashRequest();
+            client.validationRequest();
+        } finally {
+            // Don't stop process, keep alive to receive async response
+            Thread.currentThread().join();
+        }
+    }
+
 }

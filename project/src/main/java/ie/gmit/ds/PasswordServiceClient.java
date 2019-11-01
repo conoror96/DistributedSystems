@@ -94,7 +94,12 @@ public class PasswordServiceClient {
 
             @Override
             public void onNext(BoolValue value) {
-            System.out.println("Validation Successful! ");
+             if (value.getValue()){
+                    System.out.println("Validation Successful! ");
+                }
+             else{
+                 System.out.println("Problem with Validation");
+                }
             }
 
             @Override

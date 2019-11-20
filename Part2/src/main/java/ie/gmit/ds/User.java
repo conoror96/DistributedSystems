@@ -1,4 +1,5 @@
 package ie.gmit.ds;
+// Adapted from https://github.com/john-french/artistAPI-dropwizard
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

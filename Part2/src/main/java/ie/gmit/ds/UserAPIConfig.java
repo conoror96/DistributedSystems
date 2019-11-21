@@ -5,3 +5,4 @@ import io.dropwizard.Configuration;
 
 public class UserAPIConfig extends Configuration {
 }
+

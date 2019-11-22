@@ -37,9 +37,9 @@ public class UserAPIResource {
     // Add a new user
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addUser(User u){
+    public Response addUser(User add){
 
-        userMap.put(u.userID, u);
+        userMap.put(add.userID, add);
 
         String entity = "User Created ";
 
@@ -47,10 +47,38 @@ public class UserAPIResource {
     }
 
 
+    // Delete a user
+    @DELETE
+    @Path("delete")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response deleteUser(User delete){
+
+        userMap.remove(delete.getUserID());
+
+        String entity = "User Deleted ";
+
+
+        return Response.status(Response.Status.ACCEPTED).type(MediaType.TEXT_PLAIN).entity(entity).build();
+
+
+    }
 
     // Changes a specific users info
-    // Delete a user
+    @Path("/update")
+    @POST
+    public Response updateUser(User update)
+    {
+        return null;
+    }
+
+
     // Login a user
+    @Path("/login")
+    @POST
+    public Response loginUser(User login)
+    {
+        return null;
+    }
 
 }
 

@@ -1,36 +1,56 @@
 package ie.gmit.ds;
 // Adapted from https://github.com/john-french/artistAPI-dropwizard
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.Collection;
 import java.util.HashMap;
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class UserAPIResource {
 
     private HashMap<Integer, User> userMap = new HashMap<>();
 
     public UserAPIResource() {
-        User testUser = new User(1, "con", "ckkor20@live.ie", "con123");
+        User testUser = new User(1, "con", "ckkor@live.ie", "con123");
+
         userMap.put(testUser.getUserID(), testUser);
     }
 
 
+    // gets collection of users
     @GET
     public Collection<User> getUsers() {
-        // artistsMap.values() returns Collection<Artist>
-        // Collection is the interface implemented by Java collections like ArrayList, LinkedList etc.
-        // it's basically a generic list.
-        // https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html
-
         return userMap.values();
     }
 
+    // gets userID
+    @GET
+    @Path("{userID}")
+    public User getUserId(@PathParam("userID") int userID) {
+        return userMap.get(userID);
+    }
 
+    // Add a new user
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addUser(User u){
+
+        userMap.put(u.userID, u);
+
+        String entity = "User Created ";
+
+        return Response.status(Response.Status.CREATED).type(MediaType.TEXT_PLAIN).entity(entity).build();
+    }
+
+
+
+    // Changes a specific users info
+    // Delete a user
+    // Login a user
 
 }
 

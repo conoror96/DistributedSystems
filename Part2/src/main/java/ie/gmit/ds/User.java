@@ -9,6 +9,8 @@ public class User {
     String email;
     String password;
 
+    // a no-argument constructor needed for Jackson deserialisation
+    public User(){}
 
     // constructor that takes all 4 fields as arguments
     public User(int userID, String userName, String email, String password) {

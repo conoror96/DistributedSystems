@@ -8,10 +8,13 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import ie.gmit.ds.PasswordServiceGrpc;
+
 
 public class UserClient {
     /**
@@ -25,14 +28,22 @@ public class UserClient {
     // blocking (sync) stub
     private final PasswordServiceGrpc.PasswordServiceBlockingStub syncPasswordService;
 
-
-    public UserClient(String host, int port) {
+    private static UserClient instance;
+    private UserClient (){
         channel = ManagedChannelBuilder
-                .forAddress(host, port)
+                .forAddress("localhost", 50551)
                 .usePlaintext()
                 .build();
         syncPasswordService = PasswordServiceGrpc.newBlockingStub(channel);
         asyncPasswordService = PasswordServiceGrpc.newStub(channel);
+
+
+    }
+    public static UserClient getInstance(){
+        if(instance == null){
+            instance = new UserClient();
+        }
+        return instance;
     }
 
     /**
@@ -58,33 +69,34 @@ public class UserClient {
     /**
      * Method to take in user ID and Password
      */
-    public void getUserInput() {
+    /*public void getUserInput() {
         System.out.println("Enter User ID: ");
         userId = userInput.nextInt();
         System.out.println("Enter Password: ");
         password = userInput.next();
-    }
+    }*/
 
     /**
      * METHOD FOR HASH REQUEST
      * Returns hash request synchronously by calling the blocking stub (syncPasswordService)
      */
-    public void hashRequest() {
-        getUserInput();
+    public HashResult sendHashRequest(int userId, String userPassword){
+        // getUserInput();
 
         HashRequest hashRequest = HashRequest.newBuilder().setUserId(userId).setPassword(password).build();
 
         HashResponse response;
 
-        try {
-            logger.info("Sending Hash Request ");
-            response = syncPasswordService.hash(hashRequest);
-            hashedPassword = response.getHashedPassword();
-            salt = response.getSalt();
-        }catch (StatusRuntimeException ex){
-            logger.log(Level.WARNING, "RPC failed: {0}", ex.getStatus());
-            return;
-        }
+        //try {
+        //logger.info("Sending Hash Request ");
+        HashResponse hashResponse = syncPasswordService.hash(hashRequest);
+        hashedPassword = hashResponse.getHashedPassword();
+        salt = hashResponse.getSalt();
+        // }catch (StatusRuntimeException ex){
+        // logger.log(Level.WARNING, "RPC failed: {0}", ex.getStatus());
+        //return;
+        return new HashResult(hashedPassword.toByteArray(), salt.toByteArray());
+        //}
 
     }
     /** METHOD FOR VALIDATION REQUEST
@@ -94,29 +106,29 @@ public class UserClient {
 
             @Override
             public void onNext(BoolValue value) {
-             if (value.getValue()){
+                if (value.getValue()){
                     System.out.println("Validation Successful! ");
                 }
-             else{
-                 System.out.println("Problem with Validation");
+                else{
+                    System.out.println("Problem with Validation");
                 }
             }
 
             @Override
             public void onError(Throwable t) {
-            System.out.println("An error has occurred!");
+                System.out.println("An error has occurred!");
             }
 
             @Override
             public void onCompleted() {
-            System.exit(0);
+                System.exit(0);
             }
         };
 
         try {
             logger.info("Validating Request ");
             asyncPasswordService.validate(ValidateRequest.newBuilder().build(), responseObserver);
-           // logger.info("Returned from requesting all items ");
+            // logger.info("Returned from requesting all items ");
         } catch (
                 StatusRuntimeException ex) {
             logger.log(Level.WARNING, "RPC failed: {0}", ex.getStatus());
@@ -126,7 +138,7 @@ public class UserClient {
     }
 
     /** MAIN METHOD */
-    public static void main(String[] args) throws Exception {
+   /* public static void main(String[] args) throws Exception {
         UserClient client = new UserClient("localhost", 50551);
         try {
             client.hashRequest();
@@ -140,6 +152,6 @@ public class UserClient {
             // Don't stop process, keep alive to receive async response
             Thread.currentThread().join();
         }
-    }
+    }*/
 
 }

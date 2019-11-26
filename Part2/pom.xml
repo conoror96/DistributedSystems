@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-
         <dropwizard.version>1.3.16</dropwizard.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <grpc.version>1.23.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
@@ -90,7 +89,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>ie.gmit.ds.PasswordServiceServer</mainClass>
+                            <mainClass>ie.gmit.ds.UserAPIApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -102,8 +101,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
             <!-- -->

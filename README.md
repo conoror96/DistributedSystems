@@ -8,20 +8,10 @@ GitHub Repo: https://github.com/kodama96/DistributedSystems
 [Part 1 specifications can be found here](https://learnonline.gmit.ie/pluginfile.php/119965/mod_assign/intro/Project2019_Part1.pdf)
 ## Running the code
 ###  Running the server
-
-### Note:
-I have two different .jar files generated two different ways. Both are included in the .zip folder for submission as I wasnt sure which one to add. They both run the server on port 50551. <br />
-* The first one is *project/target/PasswordService.jar* in the project directory <br />
-* The second one is *project/out/artifacts/project_jar/project.jar*  in the project directory.
-
-### Option 1
 * Navigate into the .jar file directory */DistributedSystems/project/target/* on command line <br /> 
 * Run the following command: *java -jar passwordservice.jar* <br />
-### Option 2
-* Navigate into the .jar file directory *DistributedSystems/project/out/artifacts/project_jar/project.jar* on command line <br /> 
-* Run the following command: *project/out/artifacts/project_jar/project.jar*
 
-### Running the client
+### Running the client for part 1
 * Run the PasswordServiceClient <br />
 * The user will be prompted to enter user ID & Password <br />
 * The user ID, password, hashed password & salt will then be output along with validation message.<br />
@@ -35,3 +25,14 @@ I have two different .jar files generated two different ways. Both are included 
 
 # Part 2
 [Part 2 specifications can be found here](https://learnonline.gmit.ie/pluginfile.php/130649/mod_assign/intro/Project2019_Part2.pdf)
+
+## How to Run
+### Server
+java -jar target/PasswordServiceWithgRPC-1.0-SNAPSHOT.jar server UserApiConfig.yaml
+
+### Localhost
+http://localhost:9000/users
+
+### Resources
+* https://howtodoinjava.com/dropwizard/tutorial-and-hello-world-example/
+* https://github.com/john-french/artistAPI-dropwizard

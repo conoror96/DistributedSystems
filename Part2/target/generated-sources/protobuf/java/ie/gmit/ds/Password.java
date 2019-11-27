@@ -14,21 +14,1995 @@ public final class Password {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ie_gmit_ds_HashRequest_descriptor;
-  static final 
+  public interface CredentialsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Credentials)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <code>string password = 2;</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 2;</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+  }
+  /**
+   * Protobuf type {@code Credentials}
+   */
+  public  static final class Credentials extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Credentials)
+      CredentialsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Credentials.newBuilder() to construct.
+    private Credentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Credentials() {
+      password_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Credentials();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Credentials(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ie.gmit.ds.Password.internal_static_Credentials_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ie.gmit.ds.Password.internal_static_Credentials_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ie.gmit.ds.Password.Credentials.class, ie.gmit.ds.Password.Credentials.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    public int getId() {
+      return id_;
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 2;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 2;</code>
+     * @return The password.
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 2;</code>
+     * @return The bytes for password.
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ie.gmit.ds.Password.Credentials)) {
+        return super.equals(obj);
+      }
+      ie.gmit.ds.Password.Credentials other = (ie.gmit.ds.Password.Credentials) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Credentials parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.Credentials parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.Credentials parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ie.gmit.ds.Password.Credentials prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Credentials}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Credentials)
+        ie.gmit.ds.Password.CredentialsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ie.gmit.ds.Password.internal_static_Credentials_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ie.gmit.ds.Password.internal_static_Credentials_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ie.gmit.ds.Password.Credentials.class, ie.gmit.ds.Password.Credentials.Builder.class);
+      }
+
+      // Construct using ie.gmit.ds.Password.Credentials.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        password_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ie.gmit.ds.Password.internal_static_Credentials_descriptor;
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.Credentials getDefaultInstanceForType() {
+        return ie.gmit.ds.Password.Credentials.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.Credentials build() {
+        ie.gmit.ds.Password.Credentials result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.Credentials buildPartial() {
+        ie.gmit.ds.Password.Credentials result = new ie.gmit.ds.Password.Credentials(this);
+        result.id_ = id_;
+        result.password_ = password_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ie.gmit.ds.Password.Credentials) {
+          return mergeFrom((ie.gmit.ds.Password.Credentials)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ie.gmit.ds.Password.Credentials other) {
+        if (other == ie.gmit.ds.Password.Credentials.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ie.gmit.ds.Password.Credentials parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ie.gmit.ds.Password.Credentials) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 2;</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 2;</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 2;</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 2;</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Credentials)
+    }
+
+    // @@protoc_insertion_point(class_scope:Credentials)
+    private static final ie.gmit.ds.Password.Credentials DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ie.gmit.ds.Password.Credentials();
+    }
+
+    public static ie.gmit.ds.Password.Credentials getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Credentials>
+        PARSER = new com.google.protobuf.AbstractParser<Credentials>() {
+      @java.lang.Override
+      public Credentials parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Credentials(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Credentials> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Credentials> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ie.gmit.ds.Password.Credentials getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CompareOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Compare)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string password = 1;</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 1;</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>bytes hashedPassword = 2;</code>
+     * @return The hashedPassword.
+     */
+    com.google.protobuf.ByteString getHashedPassword();
+
+    /**
+     * <code>bytes salt = 3;</code>
+     * @return The salt.
+     */
+    com.google.protobuf.ByteString getSalt();
+  }
+  /**
+   * Protobuf type {@code Compare}
+   */
+  public  static final class Compare extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Compare)
+      CompareOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Compare.newBuilder() to construct.
+    private Compare(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Compare() {
+      password_ = "";
+      hashedPassword_ = com.google.protobuf.ByteString.EMPTY;
+      salt_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Compare();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Compare(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            case 18: {
+
+              hashedPassword_ = input.readBytes();
+              break;
+            }
+            case 26: {
+
+              salt_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ie.gmit.ds.Password.internal_static_Compare_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ie.gmit.ds.Password.internal_static_Compare_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ie.gmit.ds.Password.Compare.class, ie.gmit.ds.Password.Compare.Builder.class);
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 1;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 1;</code>
+     * @return The password.
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 1;</code>
+     * @return The bytes for password.
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HASHEDPASSWORD_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString hashedPassword_;
+    /**
+     * <code>bytes hashedPassword = 2;</code>
+     * @return The hashedPassword.
+     */
+    public com.google.protobuf.ByteString getHashedPassword() {
+      return hashedPassword_;
+    }
+
+    public static final int SALT_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString salt_;
+    /**
+     * <code>bytes salt = 3;</code>
+     * @return The salt.
+     */
+    public com.google.protobuf.ByteString getSalt() {
+      return salt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, password_);
+      }
+      if (!hashedPassword_.isEmpty()) {
+        output.writeBytes(2, hashedPassword_);
+      }
+      if (!salt_.isEmpty()) {
+        output.writeBytes(3, salt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, password_);
+      }
+      if (!hashedPassword_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, hashedPassword_);
+      }
+      if (!salt_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, salt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ie.gmit.ds.Password.Compare)) {
+        return super.equals(obj);
+      }
+      ie.gmit.ds.Password.Compare other = (ie.gmit.ds.Password.Compare) obj;
+
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (!getHashedPassword()
+          .equals(other.getHashedPassword())) return false;
+      if (!getSalt()
+          .equals(other.getSalt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + HASHEDPASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getHashedPassword().hashCode();
+      hash = (37 * hash) + SALT_FIELD_NUMBER;
+      hash = (53 * hash) + getSalt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Compare parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.Compare parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.Compare parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ie.gmit.ds.Password.Compare prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Compare}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Compare)
+        ie.gmit.ds.Password.CompareOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ie.gmit.ds.Password.internal_static_Compare_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ie.gmit.ds.Password.internal_static_Compare_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ie.gmit.ds.Password.Compare.class, ie.gmit.ds.Password.Compare.Builder.class);
+      }
+
+      // Construct using ie.gmit.ds.Password.Compare.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        password_ = "";
+
+        hashedPassword_ = com.google.protobuf.ByteString.EMPTY;
+
+        salt_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ie.gmit.ds.Password.internal_static_Compare_descriptor;
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.Compare getDefaultInstanceForType() {
+        return ie.gmit.ds.Password.Compare.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.Compare build() {
+        ie.gmit.ds.Password.Compare result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.Compare buildPartial() {
+        ie.gmit.ds.Password.Compare result = new ie.gmit.ds.Password.Compare(this);
+        result.password_ = password_;
+        result.hashedPassword_ = hashedPassword_;
+        result.salt_ = salt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ie.gmit.ds.Password.Compare) {
+          return mergeFrom((ie.gmit.ds.Password.Compare)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ie.gmit.ds.Password.Compare other) {
+        if (other == ie.gmit.ds.Password.Compare.getDefaultInstance()) return this;
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
+        if (other.getHashedPassword() != com.google.protobuf.ByteString.EMPTY) {
+          setHashedPassword(other.getHashedPassword());
+        }
+        if (other.getSalt() != com.google.protobuf.ByteString.EMPTY) {
+          setSalt(other.getSalt());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ie.gmit.ds.Password.Compare parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ie.gmit.ds.Password.Compare) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 1;</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 1;</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 1;</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 1;</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString hashedPassword_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes hashedPassword = 2;</code>
+       * @return The hashedPassword.
+       */
+      public com.google.protobuf.ByteString getHashedPassword() {
+        return hashedPassword_;
+      }
+      /**
+       * <code>bytes hashedPassword = 2;</code>
+       * @param value The hashedPassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHashedPassword(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashedPassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes hashedPassword = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHashedPassword() {
+        
+        hashedPassword_ = getDefaultInstance().getHashedPassword();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString salt_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes salt = 3;</code>
+       * @return The salt.
+       */
+      public com.google.protobuf.ByteString getSalt() {
+        return salt_;
+      }
+      /**
+       * <code>bytes salt = 3;</code>
+       * @param value The salt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalt(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        salt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes salt = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalt() {
+        
+        salt_ = getDefaultInstance().getSalt();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Compare)
+    }
+
+    // @@protoc_insertion_point(class_scope:Compare)
+    private static final ie.gmit.ds.Password.Compare DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ie.gmit.ds.Password.Compare();
+    }
+
+    public static ie.gmit.ds.Password.Compare getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Compare>
+        PARSER = new com.google.protobuf.AbstractParser<Compare>() {
+      @java.lang.Override
+      public Compare parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Compare(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Compare> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Compare> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ie.gmit.ds.Password.Compare getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HashResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:HashResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 userId = 1;</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
+     * <code>bytes hashedPassword = 2;</code>
+     * @return The hashedPassword.
+     */
+    com.google.protobuf.ByteString getHashedPassword();
+
+    /**
+     * <code>bytes salt = 3;</code>
+     * @return The salt.
+     */
+    com.google.protobuf.ByteString getSalt();
+  }
+  /**
+   * Protobuf type {@code HashResponse}
+   */
+  public  static final class HashResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:HashResponse)
+      HashResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HashResponse.newBuilder() to construct.
+    private HashResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HashResponse() {
+      hashedPassword_ = com.google.protobuf.ByteString.EMPTY;
+      salt_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HashResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HashResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              userId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+
+              hashedPassword_ = input.readBytes();
+              break;
+            }
+            case 26: {
+
+              salt_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ie.gmit.ds.Password.internal_static_HashResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ie.gmit.ds.Password.internal_static_HashResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ie.gmit.ds.Password.HashResponse.class, ie.gmit.ds.Password.HashResponse.Builder.class);
+    }
+
+    public static final int USERID_FIELD_NUMBER = 1;
+    private int userId_;
+    /**
+     * <code>int32 userId = 1;</code>
+     * @return The userId.
+     */
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int HASHEDPASSWORD_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString hashedPassword_;
+    /**
+     * <code>bytes hashedPassword = 2;</code>
+     * @return The hashedPassword.
+     */
+    public com.google.protobuf.ByteString getHashedPassword() {
+      return hashedPassword_;
+    }
+
+    public static final int SALT_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString salt_;
+    /**
+     * <code>bytes salt = 3;</code>
+     * @return The salt.
+     */
+    public com.google.protobuf.ByteString getSalt() {
+      return salt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (userId_ != 0) {
+        output.writeInt32(1, userId_);
+      }
+      if (!hashedPassword_.isEmpty()) {
+        output.writeBytes(2, hashedPassword_);
+      }
+      if (!salt_.isEmpty()) {
+        output.writeBytes(3, salt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, userId_);
+      }
+      if (!hashedPassword_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, hashedPassword_);
+      }
+      if (!salt_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, salt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ie.gmit.ds.Password.HashResponse)) {
+        return super.equals(obj);
+      }
+      ie.gmit.ds.Password.HashResponse other = (ie.gmit.ds.Password.HashResponse) obj;
+
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getHashedPassword()
+          .equals(other.getHashedPassword())) return false;
+      if (!getSalt()
+          .equals(other.getSalt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + HASHEDPASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getHashedPassword().hashCode();
+      hash = (37 * hash) + SALT_FIELD_NUMBER;
+      hash = (53 * hash) + getSalt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ie.gmit.ds.Password.HashResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ie.gmit.ds.Password.HashResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code HashResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:HashResponse)
+        ie.gmit.ds.Password.HashResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ie.gmit.ds.Password.internal_static_HashResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ie.gmit.ds.Password.internal_static_HashResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ie.gmit.ds.Password.HashResponse.class, ie.gmit.ds.Password.HashResponse.Builder.class);
+      }
+
+      // Construct using ie.gmit.ds.Password.HashResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = 0;
+
+        hashedPassword_ = com.google.protobuf.ByteString.EMPTY;
+
+        salt_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ie.gmit.ds.Password.internal_static_HashResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.HashResponse getDefaultInstanceForType() {
+        return ie.gmit.ds.Password.HashResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.HashResponse build() {
+        ie.gmit.ds.Password.HashResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ie.gmit.ds.Password.HashResponse buildPartial() {
+        ie.gmit.ds.Password.HashResponse result = new ie.gmit.ds.Password.HashResponse(this);
+        result.userId_ = userId_;
+        result.hashedPassword_ = hashedPassword_;
+        result.salt_ = salt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ie.gmit.ds.Password.HashResponse) {
+          return mergeFrom((ie.gmit.ds.Password.HashResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ie.gmit.ds.Password.HashResponse other) {
+        if (other == ie.gmit.ds.Password.HashResponse.getDefaultInstance()) return this;
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
+        if (other.getHashedPassword() != com.google.protobuf.ByteString.EMPTY) {
+          setHashedPassword(other.getHashedPassword());
+        }
+        if (other.getSalt() != com.google.protobuf.ByteString.EMPTY) {
+          setSalt(other.getSalt());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ie.gmit.ds.Password.HashResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ie.gmit.ds.Password.HashResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int userId_ ;
+      /**
+       * <code>int32 userId = 1;</code>
+       * @return The userId.
+       */
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>int32 userId = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 userId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString hashedPassword_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes hashedPassword = 2;</code>
+       * @return The hashedPassword.
+       */
+      public com.google.protobuf.ByteString getHashedPassword() {
+        return hashedPassword_;
+      }
+      /**
+       * <code>bytes hashedPassword = 2;</code>
+       * @param value The hashedPassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHashedPassword(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashedPassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes hashedPassword = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHashedPassword() {
+        
+        hashedPassword_ = getDefaultInstance().getHashedPassword();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString salt_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes salt = 3;</code>
+       * @return The salt.
+       */
+      public com.google.protobuf.ByteString getSalt() {
+        return salt_;
+      }
+      /**
+       * <code>bytes salt = 3;</code>
+       * @param value The salt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalt(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        salt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes salt = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalt() {
+        
+        salt_ = getDefaultInstance().getSalt();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:HashResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:HashResponse)
+    private static final ie.gmit.ds.Password.HashResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ie.gmit.ds.Password.HashResponse();
+    }
+
+    public static ie.gmit.ds.Password.HashResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HashResponse>
+        PARSER = new com.google.protobuf.AbstractParser<HashResponse>() {
+      @java.lang.Override
+      public HashResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HashResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HashResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HashResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ie.gmit.ds.Password.HashResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Credentials_descriptor;
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ie_gmit_ds_HashRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ie_gmit_ds_HashResponse_descriptor;
-  static final 
+      internal_static_Credentials_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Compare_descriptor;
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ie_gmit_ds_HashResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ie_gmit_ds_ValidateRequest_descriptor;
-  static final 
+      internal_static_Compare_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_HashResponse_descriptor;
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ie_gmit_ds_ValidateRequest_fieldAccessorTable;
+      internal_static_HashResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -38,45 +2012,40 @@ public final class Password {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016Password.proto\022\nie.gmit.ds\032\036google/pro" +
-      "tobuf/wrappers.proto\032\033google/protobuf/em" +
-      "pty.proto\"/\n\013HashRequest\022\016\n\006userId\030\001 \001(\005" +
-      "\022\020\n\010password\030\002 \001(\t\"D\n\014HashResponse\022\016\n\006us" +
-      "erId\030\001 \001(\005\022\026\n\016hashedPassword\030\002 \001(\014\022\014\n\004sa" +
-      "lt\030\003 \001(\014\"I\n\017ValidateRequest\022\020\n\010password\030" +
-      "\001 \001(\t\022\026\n\016hashedPassword\030\002 \001(\014\022\014\n\004salt\030\003 " +
-      "\001(\0142\221\001\n\017PasswordService\0229\n\004hash\022\027.ie.gmi" +
-      "t.ds.HashRequest\032\030.ie.gmit.ds.HashRespon" +
-      "se\022C\n\010validate\022\033.ie.gmit.ds.ValidateRequ" +
-      "est\032\032.google.protobuf.BoolValueB\016\n\nie.gm" +
-      "it.dsP\001b\006proto3"
+      "\n\016Password.proto\032\036google/protobuf/wrappe" +
+      "rs.proto\"+\n\013Credentials\022\n\n\002id\030\001 \001(\005\022\020\n\010p" +
+      "assword\030\002 \001(\t\"A\n\007Compare\022\020\n\010password\030\001 \001" +
+      "(\t\022\026\n\016hashedPassword\030\002 \001(\014\022\014\n\004salt\030\003 \001(\014" +
+      "\"D\n\014HashResponse\022\016\n\006userId\030\001 \001(\005\022\026\n\016hash" +
+      "edPassword\030\002 \001(\014\022\014\n\004salt\030\003 \001(\0142h\n\017Passwo" +
+      "rdService\022#\n\004hash\022\014.Credentials\032\r.HashRe" +
+      "sponse\0220\n\010validate\022\010.Compare\032\032.google.pr" +
+      "otobuf.BoolValueB\014\n\nie.gmit.dsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.WrappersProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
         });
-    internal_static_ie_gmit_ds_HashRequest_descriptor =
+    internal_static_Credentials_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ie_gmit_ds_HashRequest_fieldAccessorTable = new
+    internal_static_Credentials_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ie_gmit_ds_HashRequest_descriptor,
-        new java.lang.String[] { "UserId", "Password", });
-    internal_static_ie_gmit_ds_HashResponse_descriptor =
+        internal_static_Credentials_descriptor,
+        new java.lang.String[] { "Id", "Password", });
+    internal_static_Compare_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_ie_gmit_ds_HashResponse_fieldAccessorTable = new
+    internal_static_Compare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ie_gmit_ds_HashResponse_descriptor,
-        new java.lang.String[] { "UserId", "HashedPassword", "Salt", });
-    internal_static_ie_gmit_ds_ValidateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_ie_gmit_ds_ValidateRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ie_gmit_ds_ValidateRequest_descriptor,
+        internal_static_Compare_descriptor,
         new java.lang.String[] { "Password", "HashedPassword", "Salt", });
+    internal_static_HashResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_HashResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_HashResponse_descriptor,
+        new java.lang.String[] { "UserId", "HashedPassword", "Salt", });
     com.google.protobuf.WrappersProto.getDescriptor();
-    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

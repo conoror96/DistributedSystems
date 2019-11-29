@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
+// Class which stores user records and updates in memory.
 public class UserDatabase {
 
     public static HashMap<Integer, User> userMap = new HashMap<>();
 
-    static {
+    /*static {
         userMap.put(1, new User(1, "Conor O'Reilly", "ckkor@gmail.com", "pass123"));
         userMap.put(2, new User(2, "Ronoc YlleiR'O", "rokkoc@gmail.com", "pass321"));
-    }
+    }*/
 
     public static List<User> getUsers(){
         return new ArrayList<User>(userMap.values());

@@ -46,7 +46,10 @@ public class UserClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
-
+    /**
+     *
+     * HASH METHOD
+     */
     public void Hash(User user){
         StreamObserver<Password.HashResponse> responseStreamObserver = new StreamObserver<Password.HashResponse>() {
             @Override
@@ -82,6 +85,10 @@ public class UserClient {
 
     }
 
+    /**
+     *
+     *  VALIDATE METHOD
+     */
     public boolean Validate(String password, ByteString hashedPassword, ByteString salt) {
 
         boolean isTrue;

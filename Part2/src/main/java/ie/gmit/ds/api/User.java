@@ -11,26 +11,21 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class User {
+    /**
+     * User class is what holds the data and serialized into JSON. The model for RESTful application
+     */
+    // variables with bean validation
     @NotNull
     int userID;
     @NotBlank @Length(min = 2, max = 15)
     String password;
-    //private static int userID;
-    //@NotNull
-   // int userID;
-  //  @NotBlank
     @Length(min = 2, max = 15)
     String userName;
     @Pattern(regexp=".+@.+\\.[a-z]+")
     String email;
-  //  @NotBlank @Length(min = 2, max = 15)
-   // String password;
 
-
-    private ByteString hashedPassword;
+    private ByteString hashed_Password;
     private ByteString salt;
-
-
 
     // a no-argument constructor needed for Jackson deserialisation
     public User(){}
@@ -44,12 +39,11 @@ public class User {
 
     }
 
-
-    public User(int userID, String userName, String email, ByteString hashedPassword, ByteString salt) {
+    public User(int userID, String userName, String email, ByteString hashed_Password, ByteString salt) {
         this.userID = userID;
         this.userName = userName;
         this.email = email;
-        this.hashedPassword = hashedPassword;
+        this.hashed_Password = hashed_Password;
         this.salt = salt;
     }
 
@@ -75,7 +69,7 @@ public class User {
     }
 
     @JsonProperty
-    public ByteString getHashedPassword() { return hashedPassword; }
+    public ByteString getHashed_Password() { return hashed_Password; }
 
     @JsonProperty
     public ByteString getSalt() { return salt; }
@@ -86,7 +80,7 @@ public class User {
                 ", User Name ='" + userName + '\'' +
                 ", E-mail ='" + email + '\'' +
                 ", Password ='" + password + '\'' +
-                ", Hashed Password=" + hashedPassword +
+                ", Hashed Password=" + hashed_Password +
                 ", Salt =" + salt + '}';
     }
 

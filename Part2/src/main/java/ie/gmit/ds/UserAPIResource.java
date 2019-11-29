@@ -43,11 +43,18 @@ public class UserAPIResource {
         this.client = client;
     }
 
+    /**
+     *
+     * Return on all users
+     */
     @GET
     public Response getUsers(){
-        //Return All users
         return Response.ok(UserDatabase.getUsers()).build();
     }
+    /**
+     *
+     * Return a specific user by ID
+     */
     @GET
     @Path("/{userID}")
     public Response getUserById(@PathParam("userID") Integer id){
@@ -59,7 +66,10 @@ public class UserAPIResource {
         }
 
     }
-
+    /**
+     *
+     * Create a new user
+     */
     @POST
     public Response createUser(User user)throws URISyntaxException {
         // validation
@@ -82,7 +92,10 @@ public class UserAPIResource {
             return Response.status(NOT_FOUND).build();
 
     }
-
+    /**
+     *
+     * Update a user by ID
+     */
     @PUT
     @Path("/{userID}")
     public Response updateUserByID(@PathParam("userID") Integer id, User user) throws URISyntaxException {
@@ -104,9 +117,10 @@ public class UserAPIResource {
             return Response.status(NOT_FOUND).build();
 
     }
-
-
-
+    /**
+     *
+     * Delete a user by ID
+     */
     @DELETE
     @Path("/{userID}")
     public Response removeUserByID(@PathParam("userID") Integer id){
@@ -117,7 +131,10 @@ public class UserAPIResource {
         }else
             return Response.status(NOT_FOUND).build();
     }
-
+    /**
+     *
+     * Login a user by ID and Password
+     */
     @POST
     @Path("/login")
     public Response loginUser(UserLogin userLogin) {
@@ -132,7 +149,7 @@ public class UserAPIResource {
             return Response.status(Response.Status.BAD_REQUEST).entity(validationMessages).build();
         }
         if (e != null) {
-            if (client.Validate(userLogin.getPassword(), e.getHashedPassword(), e.getSalt())) {
+            if (client.Validate(userLogin.getPassword(), e.getHashed_Password(), e.getSalt())) {
                 return Response.status(Response.Status.OK).build();
             } else {
                 return Response.status(NO_CONTENT).build();
@@ -141,69 +158,7 @@ public class UserAPIResource {
         } else {
             return Response.status(NO_CONTENT).build();
         }
-
-
     }
-
-    // gets collection of users
-  /*  @GET
-    public Collection<User> getUsers() {
-        return userMap.values();
-    }
-
-    // gets userID
-    @GET
-    @Path("{userID}")
-    public User getUserId(@PathParam("userID") int userID) {
-        return userMap.get(userID);
-    }
-
-    // Add a new user
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response addUser(User add){
-
-        userMap.put(add.userID, add);
-
-        String entity = "User Created ";
-
-        return Response.status(Response.Status.CREATED).type(MediaType.TEXT_PLAIN).entity(entity).build();
-    }
-
-
-    // Delete a user
-    @DELETE
-    @Path("delete")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response deleteUser(User delete){
-
-        userMap.remove(delete.getUserID());
-
-        String entity = "User Deleted ";
-
-
-        return Response.status(Response.Status.ACCEPTED).type(MediaType.TEXT_PLAIN).entity(entity).build();
-
-
-    }
-
-    // Changes a specific users info
-    @Path("/update")
-    @POST
-    public Response updateUser(User update)
-    {
-        return null;
-    }
-
-
-    // Login a user
-    @Path("/login")
-    @POST
-    public Response loginUser(User login)
-    {
-        return null;
-    } */
-
 }
 
 

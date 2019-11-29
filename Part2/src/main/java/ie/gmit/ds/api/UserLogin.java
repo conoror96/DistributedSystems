@@ -14,7 +14,6 @@ public class UserLogin {
     private String password;
 
 
-
     public UserLogin() {
     }
 

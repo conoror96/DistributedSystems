@@ -8,9 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-
+// runtime environment of the application
 public class UserAPIApplication extends Application<UserAPIConfig> {
-
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserAPIApplication.class);
 
@@ -21,6 +20,7 @@ public class UserAPIApplication extends Application<UserAPIConfig> {
     @Override
     public void run(UserAPIConfig clientConfig, Environment e) throws Exception {
         LOGGER.info("Registering REST resources");
+        // Inject Environment.getValidator() in REST resource
         e.jersey().register(new UserAPIResource(e.getValidator()));
 
         e.healthChecks().register("UserHealthCheck", new UserHealthCheck());

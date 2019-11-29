@@ -60,9 +60,9 @@ public class UserAPIResource {
     public Response getUserById(@PathParam("userID") Integer id){
         User user = UserDatabase.getUser(id);
         if(user != null){
-            return Response.ok(user).build();
+            return Response.ok(user).entity("User ID found").build();
         }else{
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("No such user exists").build();
         }
 
     }
@@ -72,7 +72,6 @@ public class UserAPIResource {
      */
     @POST
     public Response createUser(User user)throws URISyntaxException {
-        // validation
         Set<ConstraintViolation<User>> violations = validator.validate(user);
         User u = UserDatabase.getUser(user.getUserID());
         if (violations.size() > 0) {
@@ -87,9 +86,9 @@ public class UserAPIResource {
             UserDatabase.createUser(user.getUserID(), user);
 
             return Response.created(new URI("/users/" + user.getUserID()))
-                    .build();
+            .entity("User Created").build();
         } else
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("A user with this ID already exists").build();
 
     }
     /**
@@ -99,7 +98,6 @@ public class UserAPIResource {
     @PUT
     @Path("/{userID}")
     public Response updateUserByID(@PathParam("userID") Integer id, User user) throws URISyntaxException {
-        // validation
         Set<ConstraintViolation<User>> violations = validator.validate(user);
         User e = UserDatabase.getUser(user.getUserID());
         if (violations.size() > 0) {
@@ -112,9 +110,9 @@ public class UserAPIResource {
         if (e != null) {
             UserDatabase.updateUser(id, user);
             client.Hash(user);
-            return Response.ok(user).build();
+            return Response.ok(user).entity("User Updated").build();
         } else
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("Could not update user, No such ID exists").build();
 
     }
     /**
@@ -127,9 +125,9 @@ public class UserAPIResource {
         User user = UserDatabase.getUser(id);
         if(user != null){
             UserDatabase.removeUser(id);
-            return Response.ok().build();
+            return Response.ok().entity("User Deleted").build();
         }else
-            return Response.status(NOT_FOUND).build();
+            return Response.status(NOT_FOUND).entity("No such user exists").build();
     }
     /**
      *
@@ -138,7 +136,6 @@ public class UserAPIResource {
     @POST
     @Path("/login")
     public Response loginUser(UserLogin userLogin) {
-        // validation
         Set<ConstraintViolation<UserLogin>> violations = validator.validate(userLogin);
         User e = UserDatabase.getUser(userLogin.getUserID());
         if (violations.size() > 0) {

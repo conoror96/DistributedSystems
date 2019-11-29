@@ -24,8 +24,8 @@ public class User {
     @Pattern(regexp=".+@.+\\.[a-z]+")
     String email;
 
-    private ByteString hashed_Password;
-    private ByteString salt;
+     ByteString hashed_Password;
+     ByteString salt;
 
     // a no-argument constructor needed for Jackson deserialisation
     public User(){}
@@ -66,6 +66,14 @@ public class User {
     @JsonProperty
     public String getPassword() {
         return password;
+    }
+
+    public void setHashed_password(ByteString hashed_password) {
+        this.hashed_Password = hashed_password;
+    }
+
+    public void setSalt(ByteString salt) {
+        this.salt = salt;
     }
 
     @JsonProperty

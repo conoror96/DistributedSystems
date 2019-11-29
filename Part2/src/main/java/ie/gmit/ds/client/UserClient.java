@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 
+
 public class UserClient {
     /**
      * CLIENT INITIALISATION
@@ -50,7 +51,7 @@ public class UserClient {
      *
      * HASH METHOD
      */
-    public void Hash(User user){
+   public void Hash(User user){
         StreamObserver<Password.HashResponse> responseStreamObserver = new StreamObserver<Password.HashResponse>() {
             @Override
             public void onNext(Password.HashResponse hashResponse) {
@@ -61,7 +62,10 @@ public class UserClient {
                         hashResponse.getSalt());
 
                 UserDatabase.createUser(u.getUserID(), u);
+                u.setHashed_password(hashResponse.getHashedPassword());
+                u.setSalt(hashResponse.getSalt());
             }
+
 
             @Override
             public void onError(Throwable throwable) {
